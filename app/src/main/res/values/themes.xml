@@ -1,9 +1,22 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Flixster" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FlixsterPlus" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/flix_red</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="android:colorBackground">@color/flix_background</item>
+        <item name="colorSurface">@color/flix_background</item>
+        <item name="colorSurfaceContainer">@color/flix_surface</item>
+        <item name="colorOnSurface">@color/flix_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/flix_on_surface_muted</item>
     </style>
 
-    <style name="Theme.Flixster" parent="Base.Theme.Flixster" />
+    <style name="TextAppearance.FlixsterPlus.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/flix_on_surface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.FlixsterPlus.Overview" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/flix_on_surface_muted</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+    </style>
 </resources>

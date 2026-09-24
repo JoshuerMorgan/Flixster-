@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Flixster</string>
+    <string name="app_name">Flixster+</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="no_overview">No description available.</string>
+    <string name="load_error">Couldn\'t load movies. Check your connection and try again.</string>
+    <string name="poster_content_description">Movie poster</string>
 </resources>

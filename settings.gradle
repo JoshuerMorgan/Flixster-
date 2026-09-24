@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Flixster"
+rootProject.name = "FlixsterPlus"
 include ':app'

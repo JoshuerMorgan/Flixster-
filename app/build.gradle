@@ -2,20 +2,27 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+// Read the TMDB key from local.properties (git-ignored) so it stays out of version control.
+def localProps = new Properties()
+def localPropsFile = rootProject.file("local.properties")
+if (localPropsFile.exists()) {
+    localPropsFile.withInputStream { localProps.load(it) }
+}
+
 android {
-    namespace 'com.example.flixster'
+    namespace 'com.example.flixsterplus'
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId "com.example.flixster"
+        applicationId "com.example.flixsterplus"
         minSdk 24
         targetSdk 37
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "TMDB_API_KEY", "\"${localProps.getProperty('TMDB_API_KEY', '')}\""
     }
 
     buildTypes {
@@ -29,15 +36,21 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    buildFeatures {
+        buildConfig true
+        viewBinding true
+    }
 }
 
 dependencies {
-    implementation libs.androidx.activity.ktx
-    implementation libs.androidx.appcompat
-    implementation libs.androidx.constraintlayout
     implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
     implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.okhttp
+    implementation libs.gson
+    implementation libs.glide
     testImplementation libs.junit
-    androidTestImplementation libs.androidx.espresso.core
-    androidTestImplementation libs.androidx.junit
 }

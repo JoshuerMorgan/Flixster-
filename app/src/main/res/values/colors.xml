@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="flix_red">#FFE50914</color>
+    <color name="flix_background">#FF121212</color>
+    <color name="flix_surface">#FF1E1E1E</color>
+    <color name="flix_surface_variant">#FF2C2C2C</color>
+    <color name="flix_on_surface">#FFF5F5F5</color>
+    <color name="flix_on_surface_muted">#FFB3B3B3</color>
+    <color name="flix_icon_muted">#FF5A5A5A</color>
 </resources>
