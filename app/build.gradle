@@ -22,6 +22,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         buildConfigField "String", "TMDB_API_KEY", "\"${localProps.getProperty('TMDB_API_KEY', '')}\""
     }
 
@@ -48,9 +50,12 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.recyclerview
+    implementation libs.androidx.fragment.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.okhttp
     implementation libs.gson
     implementation libs.glide
     testImplementation libs.junit
+    androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation libs.androidx.junit
 }

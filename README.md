@@ -61,6 +61,19 @@ Add your TMDB key to `local.properties` (this file is git-ignored):
 TMDB_API_KEY=your_key_here
 ```
 
+Then open the `Flixster` folder (the one containing `settings.gradle`) in Android Studio, let Gradle sync, and run the `app` configuration.
+
+## Project Structure
+
+Follows the CodePath lab 3 layout (Activity → Fragment → RecyclerView adapter):
+
+- `MainActivity.kt`: hosts the toolbar and places `MoviesFragment` in `R.id.content`
+- `MoviesFragment.kt`: fetches now-playing movies and sets up the RecyclerView (`fragment_movies_list.xml`)
+- `MovieRecyclerViewAdapter.kt`: binds each `Movie` to `fragment_movie.xml` (with a separate `layout-land` version)
+- `OnListFragmentInteractionListener.kt`: item-click callback, implemented by `MoviesFragment`
+- `Movie.kt` / `NowPlayingResponse.kt`: Gson models
+- `network/ApiClient.kt`: OkHttp request to TMDB, run on `Dispatchers.IO`
+
 ## License
 
     Copyright [yyyy] [name of copyright owner]

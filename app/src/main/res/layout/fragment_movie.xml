@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Landscape: shown in a 2-column grid. Fixed-height cards keep grid rows aligned;
-     the poster fills the card's height and the overview is capped at 4 lines
-     (maxLines is what makes ellipsize work; a fill-height TextView just clips mid-line). -->
+<!-- Portrait: full-width card, poster on the left, text on the right. -->
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/spacing_small"
+    android:clickable="true"
+    android:focusable="true"
     app:cardBackgroundColor="@color/flix_surface"
     app:cardCornerRadius="12dp"
     app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_medium">
 
-        <!-- Edge-to-edge poster: height = card height, width derived from 2:3 ratio. -->
+        <!-- 2:3 matches TMDB poster proportions, so nothing gets cropped. -->
         <ImageView
             android:id="@+id/moviePoster"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="@dimen/poster_width"
+            android:layout_height="0dp"
             android:background="@color/flix_surface_variant"
             android:contentDescription="@string/poster_content_description"
             android:scaleType="centerCrop"
@@ -32,10 +33,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
-            android:layout_marginTop="@dimen/spacing_medium"
-            android:layout_marginEnd="@dimen/spacing_medium"
-            android:ellipsize="end"
-            android:maxLines="2"
             android:textAppearance="@style/TextAppearance.FlixsterPlus.Title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/moviePoster"
@@ -47,14 +44,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
             android:layout_marginTop="@dimen/spacing_small"
-            android:layout_marginEnd="@dimen/spacing_medium"
-            android:layout_marginBottom="@dimen/spacing_medium"
             android:ellipsize="end"
-            android:maxLines="4"
-            app:layout_constrainedHeight="true"
-            app:layout_constraintVertical_bias="0"
+            android:maxLines="8"
             android:textAppearance="@style/TextAppearance.FlixsterPlus.Overview"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/moviePoster"
             app:layout_constraintTop_toBottomOf="@id/movieTitle" />

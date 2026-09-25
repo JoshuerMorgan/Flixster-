@@ -3,5 +3,6 @@
     <string name="now_playing">Now Playing</string>
     <string name="no_overview">No description available.</string>
     <string name="load_error">Couldn\'t load movies. Check your connection and try again.</string>
+    <string name="missing_api_key">No TMDB API key. Add TMDB_API_KEY=your_key to local.properties and rebuild.</string>
     <string name="poster_content_description">Movie poster</string>
 </resources>
