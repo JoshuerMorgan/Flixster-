@@ -1,10 +1,10 @@
 # Android Project 3 - *Flixster+*
 
-Submitted by: **YOUR NAME**
+Submitted by: **Joshua Akeredolu**
 
 **Flixster+** is an app that allows users to browse movies currently playing in theaters, using The Movie Database (TMDB) API.
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 ## Required Features
 
@@ -41,17 +41,13 @@ Here's a walkthrough of implemented user stories:
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...
+LiceCap
 
-<!-- Placeholder screenshot: e.g. set the emulator's network speed to a slow profile
-     (Extended controls > Cellular) so the placeholder graphics are visible. -->
+
 
 ## Notes
 
-- **Partial poster paths:** TMDB returns paths like `/abc.jpg`, so the app builds the full URL by prepending `https://image.tmdb.org/t/p/w500/`. It also strips the leading slash to avoid a double `//`.
-- **Null posters:** some movies have no `poster_path`. `Movie.posterUrl` returns `null` in that case, and Glide's `.fallback()` shows the error graphic instead of crashing.
-- **Threading:** the OkHttp call runs on `Dispatchers.IO` inside `lifecycleScope`, so it stays off the main thread and is cancelled if the Activity is destroyed. Only `IOException` and Gson's `JsonParseException` are caught; a broader `RuntimeException` catch would also swallow coroutine cancellation.
-- **Landscape text clipping:** a fill-height TextView with `ellipsize="end"` clips mid-line instead of adding "…". Setting an explicit `maxLines` fixed it.
-- **Edge-to-edge:** targeting SDK 35+ forces edge-to-edge drawing, so window insets have to be applied manually to keep the toolbar and last list item out from under the system bars.
+The emulator screen was blank and not loading requests from the API until I figured out the API_KEY i used was wrong 
 
 ## Setup
 
@@ -63,20 +59,11 @@ TMDB_API_KEY=your_key_here
 
 Then open the `Flixster` folder (the one containing `settings.gradle`) in Android Studio, let Gradle sync, and run the `app` configuration.
 
-## Project Structure
 
-Follows the CodePath lab 3 layout (Activity → Fragment → RecyclerView adapter):
-
-- `MainActivity.kt`: hosts the toolbar and places `MoviesFragment` in `R.id.content`
-- `MoviesFragment.kt`: fetches now-playing movies and sets up the RecyclerView (`fragment_movies_list.xml`)
-- `MovieRecyclerViewAdapter.kt`: binds each `Movie` to `fragment_movie.xml` (with a separate `layout-land` version)
-- `OnListFragmentInteractionListener.kt`: item-click callback, implemented by `MoviesFragment`
-- `Movie.kt` / `NowPlayingResponse.kt`: Gson models
-- `network/ApiClient.kt`: OkHttp request to TMDB, run on `Dispatchers.IO`
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2026] [joshuer]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
