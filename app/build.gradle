@@ -3,11 +3,11 @@ plugins {
 }
 
 // Read the TMDB key from local.properties (git-ignored) so it stays out of version control.
+// Read through providers so the configuration cache is invalidated when the file changes.
 def localProps = new Properties()
-def localPropsFile = rootProject.file("local.properties")
-if (localPropsFile.exists()) {
-    localPropsFile.withInputStream { localProps.load(it) }
-}
+def localPropsText = providers.fileContents(rootProject.layout.projectDirectory.file("local.properties"))
+        .asText.getOrElse("")
+localProps.load(new StringReader(localPropsText))
 
 android {
     namespace 'com.example.flixsterplus'
