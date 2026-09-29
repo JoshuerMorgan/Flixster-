@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="span_count">1</integer>
+    <dimen name="spacing_tiny">4dp</dimen>
     <dimen name="spacing_small">8dp</dimen>
     <dimen name="spacing_medium">12dp</dimen>
     <dimen name="spacing_large">16dp</dimen>
     <dimen name="poster_width">110dp</dimen>
+    <dimen name="image_corner_radius">10dp</dimen>
+    <dimen name="detail_photo_width">180dp</dimen>
+    <dimen name="detail_photo_height">270dp</dimen>
+    <dimen name="known_for_poster_width">80dp</dimen>
+    <dimen name="credit_poster_width">100dp</dimen>
 </resources>

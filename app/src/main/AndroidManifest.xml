@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Person detail screen, only opened from inside the app. -->
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -8,6 +8,18 @@
         <item name="colorSurfaceContainer">@color/flix_surface</item>
         <item name="colorOnSurface">@color/flix_on_surface</item>
         <item name="colorOnSurfaceVariant">@color/flix_on_surface_muted</item>
+        <!-- Checked state of the Day/Week toggle buttons. -->
+        <item name="colorSecondaryContainer">@color/flix_red</item>
+        <item name="colorOnSecondaryContainer">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.FlixsterPlus.Headline" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/flix_on_surface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.FlixsterPlus.Meta" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/flix_red</item>
     </style>
 
     <style name="TextAppearance.FlixsterPlus.Title" parent="TextAppearance.Material3.TitleMedium">

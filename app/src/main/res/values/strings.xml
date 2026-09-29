@@ -1,8 +1,34 @@
 <resources>
     <string name="app_name">Flixster+</string>
-    <string name="now_playing">Now Playing</string>
-    <string name="no_overview">No description available.</string>
-    <string name="load_error">Couldn\'t load movies. Check your connection and try again.</string>
+    <string name="trending_people">Trending People</string>
+    <string name="time_window_day">Today</string>
+    <string name="time_window_week">This Week</string>
+    <string name="retry">Retry</string>
+    <string name="load_error">Couldn\'t load trending people. Check your connection and try again.</string>
+    <string name="empty_people">No trending people right now.</string>
     <string name="missing_api_key">No TMDB API key. Add TMDB_API_KEY=your_key to local.properties and rebuild.</string>
-    <string name="poster_content_description">Movie poster</string>
+
+    <!-- Person list item -->
+    <string name="department_popularity">%1$s · Popularity %2$.1f</string>
+    <string name="unknown_department">Unknown</string>
+    <string name="known_for_list">Known for: %1$s</string>
+    <string name="no_known_for">No known titles yet.</string>
+    <string name="profile_photo">Profile photo</string>
+    <string name="profile_content_description">Photo of %1$s</string>
+    <string name="poster_content_description">Poster for %1$s</string>
+
+    <!-- Detail screen -->
+    <string name="navigate_up">Back</string>
+    <string name="popularity">Popularity: %1$.1f</string>
+    <string name="known_for_header">Known For</string>
+    <string name="filmography_header">Filmography</string>
+    <string name="media_type_movie">Movie</string>
+    <string name="media_type_tv">TV</string>
+    <string name="media_rating">%1$s · ★ %2$.1f</string>
+    <string name="title_with_year">%1$s (%2$s)</string>
+    <string name="untitled">Untitled</string>
+    <string name="no_overview">No description available.</string>
+    <string name="no_credits">No movie credits found.</string>
+    <string name="credits_error">Couldn\'t load movie credits.</string>
+    <string name="credit_role_and_overview">%1$s\n\n%2$s</string>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Shown while a poster is loading: grey 2:3 card with a film-slate icon. -->
+<!-- Shown while an image is loading: rounded grey 2:3 card with a film-slate icon. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="200dp"
     android:height="300dp"
@@ -7,7 +7,7 @@
     android:viewportHeight="300">
     <path
         android:fillColor="@color/flix_surface_variant"
-        android:pathData="M0,0h200v300h-200z" />
+        android:pathData="M16,0h168a16,16 0,0 1,16 16v268a16,16 0,0 1,-16 16h-168a16,16 0,0 1,-16 -16v-268a16,16 0,0 1,16 -16z" />
     <group
         android:scaleX="3"
         android:scaleY="3"

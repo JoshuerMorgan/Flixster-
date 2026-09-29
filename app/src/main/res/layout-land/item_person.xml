@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Landscape: shown in a 2-column grid. Fixed-height cards keep grid rows aligned;
-     the poster fills the card's height and the overview is capped at 4 lines
+     the photo fills the card's height and the known-for text is capped at 3 lines
      (maxLines is what makes ellipsize work; a fill-height TextView just clips mid-line). -->
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,20 +17,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Edge-to-edge poster: height = card height, width derived from 2:3 ratio. -->
+        <!-- Edge-to-edge photo: height = card height, width derived from 2:3 ratio. -->
         <ImageView
-            android:id="@+id/moviePoster"
+            android:id="@+id/personPhoto"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/flix_surface_variant"
-            android:contentDescription="@string/poster_content_description"
+            android:contentDescription="@string/profile_photo"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="2:3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/movieTitle"
+            android:id="@+id/personName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
@@ -40,11 +39,25 @@
             android:maxLines="2"
             android:textAppearance="@style/TextAppearance.FlixsterPlus.Title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/moviePoster"
+            app:layout_constraintStart_toEndOf="@id/personPhoto"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/movieOverview"
+            android:id="@+id/personDepartment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textAppearance="@style/TextAppearance.FlixsterPlus.Meta"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/personPhoto"
+            app:layout_constraintTop_toBottomOf="@id/personName" />
+
+        <TextView
+            android:id="@+id/personKnownFor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
@@ -52,13 +65,13 @@
             android:layout_marginEnd="@dimen/spacing_medium"
             android:layout_marginBottom="@dimen/spacing_medium"
             android:ellipsize="end"
-            android:maxLines="4"
+            android:maxLines="3"
             app:layout_constrainedHeight="true"
             app:layout_constraintVertical_bias="0"
             android:textAppearance="@style/TextAppearance.FlixsterPlus.Overview"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/moviePoster"
-            app:layout_constraintTop_toBottomOf="@id/movieTitle" />
+            app:layout_constraintStart_toEndOf="@id/personPhoto"
+            app:layout_constraintTop_toBottomOf="@id/personDepartment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/credit_poster_width"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/spacing_medium"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <!-- Fixed 2:3 size so every card in the horizontal row lines up. -->
+    <ImageView
+        android:id="@+id/creditPoster"
+        android:layout_width="@dimen/credit_poster_width"
+        android:layout_height="150dp"
+        android:contentDescription="@string/untitled"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/creditTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_tiny"
+        android:ellipsize="end"
+        android:lines="2"
+        android:textAppearance="@style/TextAppearance.FlixsterPlus.Overview"
+        android:textColor="@color/flix_on_surface" />
+
+    <TextView
+        android:id="@+id/creditRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.FlixsterPlus.Overview"
+        android:textSize="12sp" />
+</LinearLayout>

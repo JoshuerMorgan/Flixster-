@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/flix_background"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/flix_background">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationContentDescription="@string/navigate_up"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@color/flix_on_surface"
+            app:titleTextColor="@color/flix_on_surface" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_large">
+
+            <!-- Shared element: its transitionName is set in code to match the list item. -->
+            <ImageView
+                android:id="@+id/personPhoto"
+                android:layout_width="@dimen/detail_photo_width"
+                android:layout_height="@dimen/detail_photo_height"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/profile_photo"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/personName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.FlixsterPlus.Headline" />
+
+            <TextView
+                android:id="@+id/personDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.FlixsterPlus.Meta" />
+
+            <TextView
+                android:id="@+id/personPopularity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.FlixsterPlus.Overview" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="@string/known_for_header"
+                android:textAppearance="@style/TextAppearance.FlixsterPlus.Title" />
+
+            <!-- At most a few items, so it's laid out in full inside the scroll view. -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/knownForList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_known_for" />
+
+            <TextView
+                android:id="@+id/knownForEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="@string/no_known_for"
+                android:textAppearance="@style/TextAppearance.FlixsterPlus.Overview"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="@string/filmography_header"
+                android:textAppearance="@style/TextAppearance.FlixsterPlus.Title" />
+
+            <!-- Loaded separately from person/{person_id}/movie_credits. -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:minHeight="@dimen/credit_poster_width">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/creditsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/item_movie_credit" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/creditsProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminate="true"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/creditsMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAppearance="@style/TextAppearance.FlixsterPlus.Overview"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -17,13 +17,13 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:subtitle="@string/now_playing"
+            app:subtitle="@string/trending_people"
             app:subtitleTextColor="@color/flix_on_surface_muted"
             app:title="@string/app_name"
             app:titleTextColor="@color/flix_red" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- MainActivity places MoviesFragment in this container. -->
+    <!-- MainActivity places PeopleFragment in this container. -->
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
