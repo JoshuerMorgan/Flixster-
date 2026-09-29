@@ -4,7 +4,7 @@ Submitted by: **Joshua Akeredolu**
 
 **Flixster** is a browsing app that allows users to browse trending people from The Movie DB, view their details, and explore each person's filmography with posters, roles, and plot summaries.
 
-Time spent: **[X]** hours spent in total
+Time spent: **8** hours spent in total
 
 ## Required Features
 - [x] **Choose any endpoint on The MovieDB API except `now_playing`**
